@@ -129,6 +129,18 @@ PLATFORM_VERSION := 16.1.0
 #TW_OZIP_DECRYPT_KEY := "0000"
 TW_INPUT_BLACKLIST := "hbtp_vm"
 
+# Storage
+TW_HAS_MTP := true
+TW_MTP_DEVICE := /dev/mtp_usb
+TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+
+# Languages
+TW_EXTRA_LANGUAGES := false
+TW_DEFAULT_LANGUAGE := en
+
 # PBRP Build Flags
 PB_TORCH_PATH := "/sys/class/flashlight_core/flashlight"
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
