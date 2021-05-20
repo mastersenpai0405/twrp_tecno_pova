@@ -130,6 +130,6 @@ PLATFORM_VERSION := 16.1.0
 TW_INPUT_BLACKLIST := "hbtp_vm"
 
 # PBRP Build Flags
-PB_TORCH_PATH := /sys/class/flashlight_core/flashlight
+PB_TORCH_PATH := "/sys/class/flashlight_core/flashlight"
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
 PB_DISABLE_DEFAULT_DM_VERITY := true
