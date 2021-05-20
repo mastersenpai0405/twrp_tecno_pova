@@ -108,8 +108,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 
 # Padding
-TW_Y_OFFSET := 90
-TW_H_OFFSET := -90
+
 
 #flashlight
 PB_TORCH_PATH := /sys/class/flashlight_core/flashlight
