@@ -20,7 +20,7 @@
 PRODUCT_RELEASE_NAME := TECNO-LD7
 
 # Dynamic
-PRODUCT_USE_DYNAMIC_PARTITIONS := false
+#PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
