@@ -19,6 +19,9 @@
 # Release name
 PRODUCT_RELEASE_NAME := TECNO-LD7
 
+# Dynamic
+PRODUCT_USE_DYNAMIC_PARTITIONS := false
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
@@ -30,6 +33,13 @@ $(call inherit-product, device/TECNO/LD7/device.mk)
 
 # Inherit some common Pitchblack stuff.
 $(call inherit-product, vendor/pb/config/common.mk)
+
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := LD7
