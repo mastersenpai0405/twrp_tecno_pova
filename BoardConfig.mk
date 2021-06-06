@@ -142,6 +142,6 @@ TW_EXTRA_LANGUAGES := false
 TW_DEFAULT_LANGUAGE := en
 
 # PBRP Build Flags
-PB_TORCH_PATH := "/sys/class/flashlight_core/flashlight"
+PB_TORCH_PATH := "/dev/flashlight"
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
 PB_DISABLE_DEFAULT_DM_VERITY := true
