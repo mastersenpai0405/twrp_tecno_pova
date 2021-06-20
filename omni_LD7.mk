@@ -35,7 +35,8 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/roo
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-        fastbootd
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := LD7
@@ -43,7 +44,6 @@ PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := TECNO
 PRODUCT_MODEL := TECNO LD7
 PRODUCT_MANUFACTURER := TECNO MOBILE LIMITED
-
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=LD7-OP \
