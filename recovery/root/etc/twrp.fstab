@@ -28,7 +28,7 @@ product					/product	ext4
 /frp			          emmc	/dev/block/platform/bootdevice/by-name/frp		flags=display="frp";backup=1
 /nvdata			        ext4	/dev/block/platform/bootdevice/by-name/nvdata		flags=display="nvdata";backup=1
 /persist		        ext4	/dev/block/platform/bootdevice/by-name/persist		flags=display="Persist";backup=1;mounttodecrypt
-/metadata		        emmc	/dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1;wipeingui;wipeduringfactoryreset
+/metadata		        emmc	/dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1;wipeduringfactoryreset
 /cache			        ext4	/dev/block/platform/bootdevice/by-name/cache            flags=backup=1;wipeingui;wipeduringfactoryreset
 /dtbo               emmc  /dev/block/platform/bootdevice/by-name/dtbo             flags=display="Dtbo";backup=1
 /vbmeta			        emmc  /dev/block/platform/bootdevice/by-name/vbmeta           flags=display="Vbmeta";backup=1:flashimg=1
