@@ -59,13 +59,13 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
-       - name: Release Builds
-         uses: "marvinpinto/action-automatic-releases@latest"
+
+       - uses: actions/upload-artifact@v2
          with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: false
-          title: "PBRP 3.1.0-10.0"
-          files: |
-            work/out/target/product/*/*.zip
-            work/out/target/product/*/*.img
+          name: recoveryzip
+          path: work/out/target/product/*/*.zip
+
+       - uses: actions/upload-artifact@v2
+         with:
+          name: recoveryimage
+          path: work/out/target/product/*/*.img
