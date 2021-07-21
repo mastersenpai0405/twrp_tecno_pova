@@ -21,17 +21,10 @@ PRODUCT_RELEASE_NAME := TECNO-LD7
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Inherit from TECNO-LD7 device
-$(call inherit-product, device/TECNO/LD7/device.mk)
-
-# Inherit some common Pitchblack stuff.
-$(call inherit-product, vendor/pb/config/common.mk)
-
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+# Inherit from our custom recovery configuration.
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Fastbootd
 PRODUCT_PACKAGES += \
