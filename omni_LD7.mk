@@ -26,6 +26,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from our custom recovery configuration.
 $(call inherit-product, vendor/omni/config/common.mk)
 
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
+    libpuresoftkeymasterdevice \
+    ashmemd_aidl_interface-cpp \
+    libashmemd_client
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
@@ -35,9 +50,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEVICE := LD7
 PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := TECNO
-PRODUCT_MODEL := TECNO LD7
-PRODUCT_MANUFACTURER := TECNO MOBILE LIMITED
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=LD7-OP \
-    PRODUCT_DEVICE=TECNO-LD7
+PRODUCT_MODEL := LD7
+PRODUCT_MANUFACTURER := TECNO MOBILE
