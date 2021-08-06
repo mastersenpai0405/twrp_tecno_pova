@@ -71,7 +71,7 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_PARTITIONS_SIZE := 6106906624
 BOARD_MAIN_PARTITION_LIST := \
      product \
-     system \ 
+     system \
      vendor
      
 # Assert
