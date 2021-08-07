@@ -1,25 +1,7 @@
- 
-# 1 "vendor/mediatek/proprietary/hardware/fstab/mt6785/fstab.in.mt6785"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 350 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "vendor/mediatek/proprietary/hardware/fstab/mt6785/fstab.in.mt6785" 2
-# 159 "vendor/mediatek/proprietary/hardware/fstab/mt6785/fstab.in.mt6785"
+system /system ext4 ro wait,,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+vendor /vendor ext4 ro wait,,avb,logical,first_stage_mount
+product /product ext4 ro wait,,avb,logical,first_stage_mount
 
-# 183 "vendor/mediatek/proprietary/hardware/fstab/mt6785/fstab.in.mt6785"
-
-# dynamic partitions
-system /system ext4 ro wait,,avb=vbmeta_system,logical,first_stage_mount,async_discard,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor /vendor ext4 ro wait,,avb,logical,first_stage_mount,async_discard
-product /product ext4 ro wait,logical,first_stage_mount,nofail
-
-# main partitions 
-/dev/block/platform/bootdevice/by-name/md_udc /metadata ext4 noatime,nosuid,nodev,async_discard wait,formattable,first_stage_mount
-/dev/block/platform/bootdevice/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,async_discard wait,check,formattable
-/dev/block/platform/bootdevice/by-name/userdata /data f2fs noatime,nosuid,nodev,noauto_da_alloc,errors=panic,async_discard wait,check,formattable,quota,reservedsize=128m,resize,checkpoint=block,fileencryption=aes-256-xts
-
-/dev/block/platform/bootdevice/by-name/para /para emmc defaults defaults
+/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
 /dev/block/platform/bootdevice/by-name/misc /misc emmc defaults defaults
-/dev/block/platform/bootdevice/by-name/boot_para /boot_para emmc defaults defaults
+/dev/block/platform/bootdevice/by-name/para /para emmc defaults defaults
